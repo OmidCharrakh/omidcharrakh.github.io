@@ -3,41 +3,12 @@
 <head>
     <title>My Landing Page</title>
     <meta charset="utf-8" />
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <h1>My Landing Page</h1>
     <p>Welcome to my landing page! Here is a scatter plot of some data:</p>
-    <div id="scatter_plot"></div>
-    <script>
-        var data = [
-            {
-                x: {{ x }},
-                y: {{ y }},
-                mode: 'markers',
-                type: 'scatter',
-                marker: {
-                    size: 10,
-                    color: {{ color }},
-                    colorscale: 'Viridis',
-                    opacity: 0.8
-                }
-            }
-        ];
-        var layout = {
-            xaxis: {title: 'sepal width'},
-            yaxis: {title: 'sepal length'},
-            margin: {t: 0}
-        };
-        Plotly.newPlot('scatter_plot', data, layout);
-    </script>
-    <div>
-        <h2>My Other Projects</h2>
-        <ul>
-            <li><a href="https://github.com/OmidCharrakh/Quantum_CGNN">Quantum CGNN</a></li>
-            <li><a href="https://github.com/OmidCharrakh/Quantum_RCC">Quantum RCC</a></li>
-            <li><a href="https://github.com/slds-lmu/wildlife-ml">Wildlife ML</a></li>
-        </ul>
-    </div>
+    {% raw %}
+    {{ scatter_plot_div }}
+    {% endraw %}
 </body>
 </html>
